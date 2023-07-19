@@ -12,7 +12,7 @@ import com.example.myweather.R
 import com.example.myweather.logic.model.Place
 import com.example.myweather.ui.weather.WeatherActivity
 
-class PlaceAdapter(private val fragment: Fragment, private val placeList: List<Place>) :
+class PlaceAdapter(private val fragment: PlaceFragment, private val placeList: List<Place>) :
     RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
     private val TAG = "PlaceAdapter"
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -33,6 +33,7 @@ class PlaceAdapter(private val fragment: Fragment, private val placeList: List<P
             }
             Log.d(TAG, "onCreateViewHolder: start weatherActivity")
             Log.d(TAG, "onCreateViewHolder: ${place.location.lng},${place.location.lat},${place.name}")
+            fragment.viewModel.savePlace(place)
             fragment.startActivity(intent)
             Log.d(TAG, "onCreateViewHolder: finish $TAG")
             fragment.activity?.finish()
