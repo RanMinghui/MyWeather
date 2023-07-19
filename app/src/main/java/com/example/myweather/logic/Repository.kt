@@ -1,8 +1,6 @@
 package com.example.myweather.logic
 
-import android.content.Context
 import androidx.lifecycle.liveData
-import com.example.myweather.logic.model.Place
 import com.example.myweather.logic.model.Weather
 import com.example.myweather.logic.network.MyWeatherNetwork
 import kotlinx.coroutines.Dispatchers
