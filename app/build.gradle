@@ -17,6 +17,23 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        config {
+            storeFile file('D:\\asCode\\MyWeather\\RanMinghui.jks')
+            storePassword 'Rmh1314520'
+            keyAlias = 'ranminghuidev'
+            keyPassword 'Rmh1314520'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+
     buildFeatures {
         viewBinding true
     }
